@@ -3,7 +3,7 @@ body {
 }
 
 .container-saldo {
-   background-color: #63783D;
+   background-color: #99CD85;
    text-align: center;
    border-radius: 8px;
 }
@@ -32,6 +32,7 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   z-index: 2;
 }
 
 .adc-novo-registro {
@@ -43,7 +44,8 @@ body {
    font-size: 45px;
    width: 50px;
    height: 50px;
-   box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+   background-color: #63783D;
 }
 
 .padding {
@@ -59,9 +61,25 @@ body {
     display: inline;
 }
 
-
 .lancamento {
    border-left: 5px solid red;
    margin: 5px 0px;
-   background-color: #99CD85;
+   background-color: #CFE0BC;
+}
+
+.opacidade {
+   display: none;
+   background-color: black;
+   height: 100%;
+   width: 100%;
+   opacity: 0.3;
+   position: absolute;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
+
+.text-saldo {
+   padding-top: 10px;
 }

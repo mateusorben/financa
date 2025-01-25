@@ -1,4 +1,6 @@
 function adcNovoRegistro() {
+   ativaOpacidade();
+
    let modalRegistro = document.querySelector('.modal-registro');
 
    modalRegistro.style.display = 'block';
@@ -6,10 +8,11 @@ function adcNovoRegistro() {
 
 function esconderNovoRegistro() {
    let modalRegistro = document.querySelector('.modal-registro');
-   let valor = document.querySelector('#valor').value;
-   valor.innerHTML = '';
+   let valor = document.querySelector('#valor');
+   valor.value = '';
 
    modalRegistro.style.display = 'none';
+   desativaOpacidade();
 }
 
 function adcNovoLancamento() {
@@ -55,4 +58,16 @@ function pegarDataAtual() {
 
    const dataFormatada = `${dia}/${mes}/${ano}`;
    return dataFormatada;
+}
+
+function ativaOpacidade() {
+   let opacidade = document.querySelector('.opacidade');
+
+   opacidade.style.display = 'block';
+}
+
+function desativaOpacidade() {
+   let opacidade = document.querySelector('.opacidade');
+
+   opacidade.style.display = 'none';
 }
