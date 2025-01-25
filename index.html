@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Finanças</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="container-saldo">
+      <p>Saldo</p>
+      <div class="saldo">
+         <span>R$</span><h2 class="">400</h2>
+      </div>
+   </div>
+
+   <div class="modal-registro">
+      <div class="novo-registro">
+         <div class="padding">
+            <label for="valor">Valor em R$: </label>
+            <input type="number" name="valor" id="valor">
+         </div>
+      
+         <div class="padding">
+            <label for="tipo-entrada-receita">Receita</label>
+            <input type="radio" name="tipo-entrada" id="tipo-entrada-receita" checked>
+            <label for="tipo-entrada-despesa">Despesa</label>
+            <input type="radio" name="tipo-entrada" id="tipo-entrada-despesa">
+         </div>         
+    
+         <button class="padding" onclick="adcNovoLancamento()">Confirmar</button>
+      </div>
+   </div>
+
+   <button class="adc-novo-registro" onclick="adcNovoRegistro()">+</button>
+
+   <div>
+      <h3>Lançamentos</h3>
+      <div class="lancamentos">
+         <div class="lancamento">
+            <div>
+               <p class="label-lancamento-valor padding inline">Valor: </p> <span>100,00</span>
+            </div>
+            <div>
+               <p class="label-lancamento-tipo padding inline">Tipo: </p> <span>Despesa</span>
+            </div>
+            <div>
+               <p class="label-lancamento-data padding inline">Data: </p> <span>24/01/2025</span>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
