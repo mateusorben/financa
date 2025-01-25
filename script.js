@@ -6,7 +6,7 @@ function adcNovoRegistro() {
 
 function esconderNovoRegistro() {
    let modalRegistro = document.querySelector('.modal-registro');
-   let valor = document.querySelector('#valor');
+   let valor = document.querySelector('#valor').value;
    valor.innerHTML = '';
 
    modalRegistro.style.display = 'none';
@@ -27,15 +27,15 @@ function adcNovoLancamento() {
    }
 
    lancamentos.innerHTML += `         
-      <div class="lancamento">
+      <div class="lancamento" style="border-left: 5px solid ${tipoLancamento === "Receita" ? "green" : "red"}">
          <div>
-            <p class="label-lancamento-valor padding">Valor: </p> <span>${valor}</span>
+            <p class="label-lancamento-valor padding inline">Valor: </p> <span>${valor}</span>
          </div>
          <div>
-            <p class="label-lancamento-tipo padding">Tipo: </p> <span>${tipoLancamento}</span>
+            <p class="label-lancamento-tipo padding inline">Tipo: </p> <span>${tipoLancamento}</span>
          </div>
          <div>
-            <p class="label-lancamento-data padding">Data: </p> <span>${pegarDataAtual()}</span>
+            <p class="label-lancamento-data padding inline">Data: </p> <span>${pegarDataAtual()}</span>
          </div>
       </div>`;
 
