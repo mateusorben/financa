@@ -42,10 +42,7 @@ function adcNovoLancamento() {
          </div>
       </div>`;
 
-   let labelLancamentoValor = document.querySelector('.label-lancamento-valor');
-   let labelLancamentoTipo = document.querySelector('.label-lancamento-tipo');
-   let labelLancamentoData = document.querySelector('.label-lancamento-data');
-
+   movimentaSaldoConta(valor, tipoLancamento)
    esconderNovoRegistro();
 }
 
@@ -70,4 +67,24 @@ function desativaOpacidade() {
    let opacidade = document.querySelector('.opacidade');
 
    opacidade.style.display = 'none';
+}
+
+function movimentaSaldoConta(valorLancamento, tipoLancamento) {
+   let saldoTexto = document.querySelector('.valor-saldo').innerText;
+
+   saldoTexto = saldoTexto.replace(/\./g, '').replace(',', '.').replace(/[^\d.-]/g, '');
+
+   let SaldoConta = parseFloat(saldoTexto);
+   if (isNaN(SaldoConta)) SaldoConta = 0;
+
+   let valorNumerico = parseFloat(valorLancamento);
+   if (isNaN(valorNumerico)) valorNumerico = 0;
+
+   let saldoCalculo = tipoLancamento === "Receita" 
+      ? SaldoConta + valorNumerico 
+      : SaldoConta - valorNumerico;
+
+   let saldoFormatado = saldoCalculo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+   document.querySelector('.valor-saldo').innerText = saldoFormatado;
 }
